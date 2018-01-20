@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// name 可以为路由指定名称，命名路由可以方便地为指定路由生成 URL 或者重定向
+Route::get('/', 'PagesController@root')->name('root');
