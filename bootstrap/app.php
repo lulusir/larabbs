@@ -1,7 +1,6 @@
 <?php
 
-// __DIE__ 表示文件所在的目录
-require __DIR__ . './helpers.php';
+require __DIR__ . '/helpers.php';
 /*
 |--------------------------------------------------------------------------
 | Create The Application
