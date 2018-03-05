@@ -16,7 +16,7 @@ class TopicsController extends Controller
 
 	public function index()
 	{
-		$topics = Topic::paginate();
+		$topics = Topic::with('user', 'category')->paginate(30); // 用with方法提前加载了关联属性user和category，并且分页设置为30
 		return view('topics.index', compact('topics'));
 	}
 
