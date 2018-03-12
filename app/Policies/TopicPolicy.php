@@ -9,12 +9,14 @@ class TopicPolicy extends Policy
 {
     public function update(User $user, Topic $topic)
     {
-        return $topic->user_id == $user->id;
+        // 只允许用户自己操作
+        return $user->isAuthorOf($topic);
         // return true;
     }
 
     public function destroy(User $user, Topic $topic)
     {
-        return true;
+        // return true;
+        return $user->isAuthorOf($topic);
     }
 }
