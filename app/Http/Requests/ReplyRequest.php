@@ -12,6 +12,7 @@ class ReplyRequest extends Request
             case 'POST':
             {
                 return [
+                    'content' => 'required|min:2'
                     // CREATE ROLES
                 ];
             }
