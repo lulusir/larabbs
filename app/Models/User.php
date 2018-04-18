@@ -35,4 +35,9 @@ class User extends Authenticatable
     public function isAuthorOf($model) {
         return $model->user_id == $this->id;
     }
+
+    public function replies()
+    {
+        return $this->hasMany(Reply::class);
+    }
 }
