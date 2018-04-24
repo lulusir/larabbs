@@ -48,6 +48,7 @@ class Topic extends Model
 
     public function link($params = [])
     {
+        // route 函数为给定的命名路由生成一个 URL：
         return route('topics.show', array_merge([$this->id, $this->slug], $params));
     }
 

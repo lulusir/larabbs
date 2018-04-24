@@ -15,6 +15,7 @@ class ReplyPolicy extends Policy
 
     public function destroy(User $user, Reply $reply)
     {
-        return true;
+        // 评论的作者和评论文章的作者才有资格
+        return $user->isAuthorOf($reply) || $user->isAuthorOf($reply->topic);
     }
 }
